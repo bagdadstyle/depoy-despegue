@@ -11,37 +11,36 @@ import { useSelector } from "react-redux";
 
 const Login = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
-  const history = useHistory()
-  const user = useSelector(state => state.user)
-  const setLog = localStorage.getItem('sinLog')
-  const payment = useSelector(state => state.getPayment)
+  const history = useHistory();
+  const user = useSelector((state) => state.user);
+  const setLog = localStorage.getItem("sinLog");
+  const payment = useSelector((state) => state.getPayment);
   useEffect(() => {
-    if(setLog !== 'true'){
-    if(user){
-      history.push('/');
-    }}
-  }, [user])
-
+    if (setLog !== "true") {
+      if (user) {
+        history.push("/");
+      }
+    }
+  }, [user]);
 
   const google = () => {
-    if(setLog === 'true'){
+    if (setLog === "true") {
       let display = true;
-      localStorage.setItem('display', display)
-      return window.open("http://localhost:3001/auth/google", "_self",'',);
+      localStorage.setItem("display", display);
+      return window.open("/auth/google", "_self", "");
     }
-    window.open("http://localhost:3001/auth/google", "_self",'',);
+    window.open("/auth/google", "_self", "");
   };
-  console.log(setLog)
+  console.log(setLog);
 
-  function login(valores){
-    if(setLog === 'true'){
+  function login(valores) {
+    if (setLog === "true") {
       axios({
         method: "POST",
         data: valores,
         withCredentials: true,
         url: "/login",
-      })
-      .then(() =>history.push('/purchase') )
+      }).then(() => history.push("/purchase"));
     }
     axios({
       method: "POST",
