@@ -102,40 +102,40 @@ export const storePurchase = (user, flight) => {
  
 export function listUsers () {
     return async function(dispatch){
-        let response = await axios.get(`http://localhost:3001/admin/users`)
+        let response = await axios.get(`/admin/users`)
         return dispatch({type: USERS_LIST, payload: response.data})
     }
 }
 
 export const updateUser = (user) => {
     return async function(){
-        await axios.put(`http://localhost:3001/admin/userupdate`,{user})
+        await axios.put(`/admin/userupdate`,{user})
     }
 }
 
 export function listOffers () {
     return async function(dispatch){
-        let response = await axios.get(`http://localhost:3001/admin/offers/getoffers`)
+        let response = await axios.get(`/admin/offers/getoffers`)
         return dispatch({type: OFFERS_LIST, payload: response.data})
     }
 }
 
 export const offersCreate = (offer) => {
     return async function(){
-        await axios.post(`http://localhost:3001/admin/offers`,{offer})
+        await axios.post(`/admin/offers`,{offer})
     }
 }
 
 export function getHistory(id){
     return async function(dispatch){
-        let response = await axios.get(`http://localhost:3001/users/getHistory?id=${id}`)
+        let response = await axios.get(`/getHistory?id=${id}`)
         return dispatch({type: GET_HISTORY, payload: response.data})
     }
 }
 
 export const updateOffer = (offer) => {
     return async function(){
-        await axios.put(`http://localhost:3001/admin/offers/offer`,{offer})
+        await axios.put(`/admin/offers/offer`,{offer})
     }
 }
 
@@ -151,7 +151,7 @@ export const addUserRole = (user) => {
 export const getPayment = (body) => {
     // console.log(body)
     return async function(dispatch){
-        const response = await axios.post(`http://localhost:3001/mercadopago/payment`, body)
+        const response = await axios.post(`/mercadopago/payment`, body)
         return dispatch({type: "GET_PAYMENT", payload: response.data })
     }
 }
