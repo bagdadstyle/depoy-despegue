@@ -30,8 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(
   cors({
-    origin: process.env.VERCEL_URL, // <-- location of the react app were connecting to
-    methods: "GET,POST,PUT,DELETE",
+    origin: [process.env.VERCEL_URL], // <-- location of the react app were connecting to
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
