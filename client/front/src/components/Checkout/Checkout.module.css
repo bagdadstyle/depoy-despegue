@@ -1,0 +1,29 @@
+.box{
+    width: 100%;
+    height: 100vh;
+    background-color: grey;
+    display: grid;
+    place-items: center;
+}
+
+.wrapper{
+    background-color: lightgray;
+    padding: 100px;
+    border-radius: 10px;
+}
+
+.btnmp{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.btnlink{
+    width: 200px;
+    border:none;
+}
+
+.btnimg{
+    width: 40px;
+    object-fit: cover;
+}

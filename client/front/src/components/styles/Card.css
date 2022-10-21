@@ -1,0 +1,68 @@
+.card-div{
+    background-color: rgb(234, 233, 234);
+    margin: 20px;
+    width: 1320px
+}
+
+ .card-border-left{
+    border-left: 4px solid rgb(111, 11, 138);
+}
+
+.card-border-right{
+    border-right: 4px solid rgb(111, 11, 138);
+} 
+
+.card-airline-box{
+    height: 80px;
+    font-family: 'Exo 2', sans-serif;
+    height: max-content;
+}
+
+
+.card-airline-box-one{
+    display: flex;
+    justify-content: center;
+    font-family: 'Exo 2', sans-serif;
+    align-items: center;
+    height: 100%;
+}
+.card-price-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-div-price-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-btn{
+    border: none;
+    background-color: rgb(111, 11, 138);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+
+.card-more-details{
+    background-color: rgb(111, 11, 138);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:3px ;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
