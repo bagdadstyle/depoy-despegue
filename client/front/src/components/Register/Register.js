@@ -19,7 +19,7 @@ const Register = ({ user }) => {
   }, [user]);
 
   const google = () => {
-    window.open("http://localhost:3001/auth/google", "_self");
+    window.open("/auth/google", "_self");
   };
 
   const register = (valores) => {
@@ -58,12 +58,16 @@ const Register = ({ user }) => {
           // Validacion password
           if (!valores.password) {
             errores.password = "Por favor, introduzca una contraseña";
+          } else if (
+            !/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(
+              valores.password
+            )
+          ) {
+            errores.password = `Minimo 8 caracteres, Maximo 16 caracteres`;
+            errores.passwordd =
+              "Al menos un digito, al menos una minuscula y una mayuscula";
+            errores.passworddd = "Sin espacios";
           }
-          else if(!/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(valores.password)){
-            errores.password = `Minimo 8 caracteres, Maximo 16 caracteres`
-            errores.passwordd = 'Al menos un digito, al menos una minuscula y una mayuscula'
-            errores.passworddd = 'Sin espacios'
-        }
 
           if (!valores.passwordRepet) {
             errores.passwordRepet = "Por favor, introduzca una contraseña";
@@ -140,11 +144,15 @@ const Register = ({ user }) => {
                 />
                 <ErrorMessage
                   name="password"
-                  component={() => <div className="error">{errors.passwordd}</div>}
+                  component={() => (
+                    <div className="error">{errors.passwordd}</div>
+                  )}
                 />
                 <ErrorMessage
                   name="password"
-                  component={() => <div className="error">{errors.passworddd}</div>}
+                  component={() => (
+                    <div className="error">{errors.passworddd}</div>
+                  )}
                 />
               </div>
               <div>
