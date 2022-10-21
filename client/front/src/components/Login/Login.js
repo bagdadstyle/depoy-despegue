@@ -27,9 +27,13 @@ const Login = () => {
     if (setLog === "true") {
       let display = true;
       localStorage.setItem("display", display);
-      return window.open("/auth/google", "_self", "");
+      return window.open(
+        `${process.env.REACT_APP_API}/auth/google`,
+        "_self",
+        ""
+      );
     }
-    window.open("/auth/google", "_self", "");
+    window.open(`${process.env.REACT_APP_API}/auth/google`, "_self", "");
   };
   console.log(setLog);
 
