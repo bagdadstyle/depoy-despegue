@@ -18,7 +18,7 @@ export default function NavBar() {
   
   function handleSubmitLogOut() {
     localStorage.clear()
-    window.open("http://localhost:3001/auth/logout", "_self");
+    window.open("/auth/logout", "_self");
     alert("Cerrando sesion");
   }
 
