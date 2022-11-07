@@ -27,4 +27,5 @@ const flight = mongoose.Schema({
   },
 });
 
+
 module.exports = mongoose.model("Flight", flight);
